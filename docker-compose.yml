@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    postgres:
+        container_name: postgresDiSample
+        image: postgres
+        environment:
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_DB: sample_db
+        restart: on-failure
+        ports:
+            - 5435:5432

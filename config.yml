@@ -1,0 +1,2 @@
+db:
+  url: "postgresql+asyncpg://postgres:postgres@localhost:5435/sample_db"
