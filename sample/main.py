@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 import yaml
 
-from .controllers import router
-from .providers import (
+from sample.presentation.api.controllers import router
+from sample.di.providers import (
     provide_session_stub,
     provide_db,
     ProvideSession
 )
-from .exception_handlers import http400_error_handler
+from sample.presentation.api.exception_handlers import http400_error_handler
 
 
 CONFIG_FILE = "config.yml"

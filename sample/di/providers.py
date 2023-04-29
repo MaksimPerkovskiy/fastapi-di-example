@@ -4,7 +4,7 @@ if TYPE_CHECKING:
     from sqlalchemy.ext.asyncio import AsyncSession
     from sqlalchemy.orm.session import sessionmaker
 
-from .database import Database
+from sample.data_access.rdbms.database import Database
 
 
 def provide_db(db_url: str) -> Database:

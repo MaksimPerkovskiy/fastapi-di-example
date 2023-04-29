@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from sqlalchemy.ext.asyncio import AsyncSession
-    from .dao import UserDAO, PermissionsDAO
+    from sample.data_access.rdbms.dao import UserDAO, PermissionsDAO
 
 
 class UserService:

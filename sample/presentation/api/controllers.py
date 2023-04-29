@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends
 from starlette.requests import Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .services import UserService
-from .dao import UserDAO, PermissionsDAO
-from .providers import provide_session_stub
+from sample.core.services import UserService
+from sample.data_access.rdbms.dao import UserDAO, PermissionsDAO
+from sample.di.providers import provide_session_stub
 
 
 router = APIRouter(prefix='/api', tags=['Users'])
