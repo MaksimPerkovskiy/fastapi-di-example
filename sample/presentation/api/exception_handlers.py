@@ -9,17 +9,6 @@ RT = TypeVar('RT')
 P = ParamSpec('P')
 
 
-def finalize_session(func: Callable[P, RT]) -> Callable[P, RT]:
-    @wraps(func)
-    async def wrap(request: Request, *args: P.args, **kwargs: P.kwargs) -> RT:
-        if request.state.session:
-            await request.state.session.close()
-        
-        return await func(request, *args, **kwargs)
-    return wrap
-
-
-@finalize_session
 async def http400_error_handler(
         request: Request, 
         exc: ValueError

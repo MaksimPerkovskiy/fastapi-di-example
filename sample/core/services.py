@@ -22,5 +22,6 @@ class UserService:
     async def get_user(self, user_id: int) -> None:
         await self._user_dao.get(user_id=user_id)
         await self._user_dao.create()
+        raise ValueError
         await self._permissions_dao.list()
         await self._session.commit()

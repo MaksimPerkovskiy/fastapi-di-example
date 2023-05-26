@@ -28,11 +28,9 @@ async def user(
         user_id: int,
         session: AsyncSession = Depends(provide_session_stub)
 ):
-    request.state.session = session
     user_service = UserService(
         user_dao=UserDAO(session=session),
         permissions_dao=PermissionsDAO(session=session),
         session=session
     )
-    raise ValueError
     await user_service.get_user(user_id=user_id)
